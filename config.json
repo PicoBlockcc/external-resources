@@ -1,0 +1,16 @@
+{
+    "updater": {
+        "default": {
+            "provider": "github",
+            "repo": "picoblockcc/external-resources"
+        },
+        "cn": {
+            "provider": "spaces",
+            "name": "openblock",
+            "path": "resource",
+            "region": "sgp1"
+        }
+    },
+    "version": "v0.0.4",
+    "sha256": "ebab827643a809e353efc7a815c7a0a3b7a0099a8d191ca8c4aafaf084f9b986"
+}
