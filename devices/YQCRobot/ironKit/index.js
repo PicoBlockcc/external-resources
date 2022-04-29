@@ -1,5 +1,5 @@
 const ironKit = formatMessage => ({
-    name: 'PicoBot',
+    name: 'Pico Bot',
     deviceId: 'ironKit_arduinoUno',
     manufactor: 'YQC Robot',
     learnMore: 'https://item.taobao.com/item.htm?id=628120335101',
