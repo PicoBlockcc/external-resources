@@ -1,7 +1,7 @@
 const ironKit = formatMessage => ({
-    name: 'Pico Bot',
+    name: 'IronKit',
     deviceId: 'ironKit_arduinoUno',
-    manufactor: 'pico.ma',
+    manufactor: 'YQC Robot',
     learnMore: 'https://item.taobao.com/item.htm?id=628120335101',
     iconURL: 'asset/ironKit.png',
     description: formatMessage({
@@ -24,7 +24,7 @@ const ironKit = formatMessage => ({
     tags: ['arduino', 'kit'],
     deviceExtensions: ['ironKit', 'apds9960'],
     deviceExtensionsCompatible: 'arduinoUno',
-    helpLink: 'https://www.pico.ma/'
+    helpLink: 'https://www.sxyiqichuang.com/'
 });
 
 module.exports = ironKit;

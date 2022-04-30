@@ -2,7 +2,7 @@
     "updater": {
         "default": {
             "provider": "github",
-            "repo": "picoblockcc/external-resources"
+            "repo": "openblockcc/external-resources-v2"
         },
         "cn": {
             "provider": "spaces",
