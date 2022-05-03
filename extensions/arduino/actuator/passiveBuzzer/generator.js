@@ -19,6 +19,12 @@ function addGenerator (Blockly) {
         return `my_buzzer.tone(${freq}, ${time} * 1000 * beatTime);\n`;
     };
 
+    Blockly.Arduino.passiveBuzzer_playBiptone = function () {
+        const time = this.getFieldValue('TIME');
+
+        return `my_buzzer.playBiptone(${time} * 1000);\n`;
+    };
+
     Blockly.Arduino.passiveBuzzer_setTempo = function (block) {
         const bpm = Blockly.Arduino.valueToCode(block, 'BPM', Blockly.Arduino.ORDER_ATOMIC);
 

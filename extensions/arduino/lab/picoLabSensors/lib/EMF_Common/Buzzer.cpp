@@ -13,7 +13,7 @@ uint8_t buzzer_pin;
  */
 Buzzer::Buzzer()
 {
-  buzzer_pin = 9;
+  buzzer_pin = 3;
 }
 
 /**

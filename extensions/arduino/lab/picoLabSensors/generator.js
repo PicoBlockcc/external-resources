@@ -2,6 +2,17 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 function addGenerator (Blockly) {
+    
+    Blockly.Arduino.picoLabSensors_setBuzzer = function () {
+        const sound = this.getFieldValue('sound');
+
+        Blockly.Arduino.includes_.picoLabSensors_setBuzzer = '#include <Buzzer.h>\n#include <Sounds.h>';
+        Blockly.Arduino.definitions_.picoLabSensors_setBuzzer = 'Sensor *buzzer = mMotorDriver.getSensor(E_SENSOR_MAX);';
+        Blockly.Arduino.setups_.md_buzzerinit = 'mMotorDriver.getSensor(E_BUZZER);';
+
+        return `buzzer->Sing(${sound});\n`;
+    };
+
     Blockly.Arduino.picoLabSensors_init = function () {
         Blockly.Arduino.includes_.picoLabSensors_init = '#include <MotorDriver.h>';
         Blockly.Arduino.definitions_.picoLabSensors_init =
@@ -50,15 +61,7 @@ function addGenerator (Blockly) {
         return `rgb->SetRgbColor(${no}, ${color});\n`;
     };
 
-    Blockly.Arduino.picoLabSensors_setBuzzer = function () {
-        const sound = this.getFieldValue('sound');
 
-        Blockly.Arduino.includes_.picoLabSensors_setBuzzer = '#include <Buzzer.h>\n#include <Sounds.h>';
-        Blockly.Arduino.definitions_.picoLabSensors_setBuzzer = 'Sensor *buzzer = mMotorDriver.getSensor(E_SENSOR_MAX);';
-        Blockly.Arduino.setups_.md_buzzerinit = 'mMotorDriver.getSensor(E_BUZZER);';
-
-        return `buzzer->Sing(${sound});\n`;
-    };
 
     Blockly.Arduino.picoLabSensors_ps2ReadData = function () {
         Blockly.Arduino.includes_.picoLabSensors_ps2ReadData = '#include <PS2X_lib.h>';

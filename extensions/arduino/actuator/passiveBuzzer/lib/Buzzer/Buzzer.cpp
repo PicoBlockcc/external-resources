@@ -62,6 +62,16 @@ void Buzzer::tone(int pin, uint16_t frequency, uint32_t duration, uint32_t silen
   delay(silentDuration);
 }
 
+void Buzzer::toneBip(int pin, uint32_t duration)
+{
+  this->buzzer_pin = pin;
+  pinMode(this->buzzer_pin, OUTPUT);
+  digitalWrite(this->buzzer_pin, HIGH);
+  delay(duration);
+  digitalWrite(this->buzzer_pin, LOW);
+  delay(duration);
+}
+
 /**
  * \par Function
  *    tone
@@ -123,6 +133,12 @@ void Buzzer::bendTones(uint16_t frequency, uint16_t finalFrequency, float step, 
     i = (frequency < finalFrequency) ? (i * step) : (i / step);
     tone(this->buzzer_pin, i, duration, silentDuration);
   }
+}
+
+
+void Buzzer::playBiptone(uint32_t duration)
+{
+  toneBip(this->buzzer_pin, duration);
 }
 
 /**

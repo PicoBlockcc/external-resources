@@ -101,6 +101,24 @@ function addBlocks (Blockly) {
         }
     };
 
+    Blockly.Blocks.passiveBuzzer_playBiptone = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.PASSIVEBUZZER_PLAYBIPTONE,
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'TIME',
+                        options: beatTime
+                    }
+                ],
+                colour: colour,
+                secondaryColour: secondaryColour,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+
     Blockly.Blocks.passiveBuzzer_setTempo = {
         init: function () {
             this.jsonInit({

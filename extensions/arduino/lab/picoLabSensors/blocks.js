@@ -2,12 +2,42 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 function addBlocks (Blockly) {
-    const color = '#00D7B0';
+    const color = '#e84529';
 
     Blockly.Blocks.picoLabSensors_init = {
         init: function () {
             this.jsonInit({
                 message0: Blockly.Msg.PICOLABSENSORS_INIT,
+                colour: color,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+    
+    Blockly.Blocks.picoLabSensors_setBuzzer = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.PICOLABSENSORS_SETBUZZER,
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'sound',
+                        options: [
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_CONNECT, '0'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_DISCONNECT, '1'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_BUTTON, '2'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_MODE, '3'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_SUPERRISE, '6'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_OHOH, '7'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_OHOH2, '8'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_CUTE, '9'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_HAPPY, '11'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_SAD, '14'],
+                            [Blockly.Msg.PICOLABSENSORS_SOUND_SAD2, '15']
+                        ]
+                    },
+                    
+                ],
                 colour: color,
                 extensions: ['shape_statement']
             });
@@ -125,34 +155,6 @@ function addBlocks (Blockly) {
         }
     };
 
-    Blockly.Blocks.picoLabSensors_setBuzzer = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.PICOLABSENSORS_SETBUZZER,
-                args0: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'sound',
-                        options: [
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_CONNECT, '0'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_DISCONNECT, '1'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_BUTTON, '2'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_MODE, '3'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_SUPERRISE, '6'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_OHOH, '7'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_OHOH2, '8'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_CUTE, '9'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_HAPPY, '11'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_SAD, '14'],
-                            [Blockly.Msg.PICOLABSENSORS_SOUND_SAD2, '15']
-                        ]
-                    }
-                ],
-                colour: color,
-                extensions: ['shape_statement']
-            });
-        }
-    };
 
     Blockly.Blocks.picoLabSensors_ps2ReadData = {
         init: function () {

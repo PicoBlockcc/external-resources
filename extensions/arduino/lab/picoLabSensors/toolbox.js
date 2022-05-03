@@ -3,7 +3,9 @@
 /* eslint-disable require-jsdoc */
 function addToolbox () {
     return `
-<category name="%{BKY_IRON_KIT_CATEGORY}" id="IRON_KIT_CATEGORY" colour="#00D7B0" secondaryColour="#00D7B0">
+<category name="%{BKY_IRON_KIT_CATEGORY}" id="IRON_KIT_CATEGORY" colour="#e84529" secondaryColour="#af201d">
+    <block type="picoLabSensors_setBuzzer" id="picoLabSensors_setBuzzer">
+    </block>
     <block type="picoLabSensors_init" id="picoLabSensors_init">
     </block>
     <block type="picoLabSensors_setMotorSpeed" id="picoLabSensors_setMotorSpeed">
@@ -26,8 +28,6 @@ function addToolbox () {
         <value name="colour">
             <shadow type="colour_picker"/>
         </value>
-    </block>
-    <block type="picoLabSensors_setBuzzer" id="picoLabSensors_setBuzzer">
     </block>
     <sep gap="36"/>
     <block type="picoLabSensors_ps2ReadData" id="picoLabSensors_ps2ReadData">

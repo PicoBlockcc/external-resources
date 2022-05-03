@@ -21,8 +21,8 @@ const picoLab = formatMessage => ({
     programMode: ['realtime', 'upload'],
     defaultProgramMode: 'upload',
     programLanguage: ['block', 'cpp'],
-    tags: ['arduino', 'kit'],
-    deviceExtensions: ['picoLabSensors', 'apds9960'],
+    tags: ['arduino', 'Lab'],
+    deviceExtensions: ['picoLabSensors'],
     deviceExtensionsCompatible: 'arduinoUno',
     helpLink: 'https://www.pico.ma/'
 });

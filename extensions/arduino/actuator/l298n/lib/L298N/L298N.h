@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 
-#define L298N_FORWARD   -1
+#define L298N_FORWARD  -1
 #define L298N_BACKWARD  1
 
 class L298N
