@@ -1,6 +1,3 @@
-/* eslint-disable func-style */
-/* eslint-disable max-len */
-/* eslint-disable require-jsdoc */
 function addGenerator (Blockly) {
     Blockly.Arduino.passiveBuzzer_init = function (block) {
         const pin = block.getFieldValue('PIN');
@@ -12,17 +9,25 @@ function addGenerator (Blockly) {
         return ``;
     };
 
+    Blockly.Arduino.passiveBuzzer_playBiptone = function () {
+        const time = this.getFieldValue('TIME');
+
+        return `my_buzzer.playBiptone(${time} * 1000);\n`;
+    };
+
+    Blockly.Arduino.passiveBuzzer_playBuzzertone = function () {
+        return `my_buzzer.playBuzzertone();\n`;
+    };
+
+    Blockly.Arduino.passiveBuzzer_stopBuzzertone = function () {
+        return `my_buzzer.stopBuzzertone();\n`;
+    };
+
     Blockly.Arduino.passiveBuzzer_playToneForBeat = function () {
         const freq = this.getFieldValue('FREQ');
         const time = this.getFieldValue('TIME');
 
         return `my_buzzer.tone(${freq}, ${time} * 1000 * beatTime);\n`;
-    };
-
-    Blockly.Arduino.passiveBuzzer_playBiptone = function () {
-        const time = this.getFieldValue('TIME');
-
-        return `my_buzzer.playBiptone(${time} * 1000);\n`;
     };
 
     Blockly.Arduino.passiveBuzzer_setTempo = function (block) {

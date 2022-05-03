@@ -119,6 +119,28 @@ function addBlocks (Blockly) {
         }
     };
 
+    Blockly.Blocks.passiveBuzzer_playBuzzertone = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.PASSIVEBUZZER_PLAYBUZZERTONE,
+                colour: colour,
+                secondaryColour: secondaryColour,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+
+    Blockly.Blocks.passiveBuzzer_stopBuzzertone = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.PASSIVEBUZZER_STOPBUZZERTONE,
+                colour: colour,
+                secondaryColour: secondaryColour,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+
     Blockly.Blocks.passiveBuzzer_setTempo = {
         init: function () {
             this.jsonInit({

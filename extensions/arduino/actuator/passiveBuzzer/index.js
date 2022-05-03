@@ -5,7 +5,7 @@ const passiveBuzzer = formatMessage => ({
     }),
     extensionId: 'passiveBuzzer',
     version: '1.0.0',
-    supportDevice: ['arduinoUno', 'picoLabSensors'],
+    supportDevice: ['arduinoUno', 'picoLabSensors', 'passiveBuzzer'],
     author: 'Pico',
     iconURL: `asset/passiveBuzzer.png`,
     description: formatMessage({

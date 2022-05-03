@@ -7,10 +7,11 @@ function addToolbox () {
     <block type="passiveBuzzer_init" id="passiveBuzzer_init">
         <field name="PIN">3</field>
     </block>
-    <block type="passiveBuzzer_playToneForBeat" id="passiveBuzzer_playToneForBeat">
-        <field name="FREQ">note_C4</field>
-    </block>
     <block type="passiveBuzzer_playBiptone" id="passiveBuzzer_playBiptone">
+    </block>
+    <block type="passiveBuzzer_playBuzzertone" id="passiveBuzzer_playBuzzertone">
+    </block>
+    <block type="passiveBuzzer_stopBuzzertone" id="passiveBuzzer_stopBuzzertone">
     </block>
     <block type="passiveBuzzer_setTempo" id="passiveBuzzer_setTempo">
         <value name="BPM">
@@ -20,6 +21,9 @@ function addToolbox () {
         </value>
     </block>
     <block type="passiveBuzzer_playRingtone" id="passiveBuzzer_playRingtone">
+    </block>
+    <block type="passiveBuzzer_playToneForBeat" id="passiveBuzzer_playToneForBeat">
+        <field name="FREQ">note_C4</field>
     </block>
 </category>`;
 }

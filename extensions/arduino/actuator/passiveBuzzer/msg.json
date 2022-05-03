@@ -3,6 +3,8 @@
     "PASSIVEBUZZER_INIT": "init passive buzzer pin %1",
     "PASSIVEBUZZER_PLAYTONEFORBEAT": "play tone %1 for %2 beat",
     "PASSIVEBUZZER_PLAYBIPTONE": "play bip for %1 beat",
+    "PASSIVEBUZZER_PLAYBUZZERTONE": "play buzzer",
+    "PASSIVEBUZZER_STOPBUZZERTONE": "stop buzzer",
     "PASSIVEBUZZER_SETTEMPO": "set tempo to (bpm) %1",
     "PASSIVEBUZZER_PLAYRINGTONE": "play ringtone %1",
     "PASSIVEBUZZER_CONNECTION": "connection",

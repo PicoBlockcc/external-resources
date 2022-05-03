@@ -4,22 +4,21 @@
 #include <Arduino.h>
 #include "Sounds.h"
 
-/**
- * Class: Buzzer
- * \par Description
- * Declaration of Class Buzzer.
- */
 class Buzzer{
 public:
   Buzzer(int pin);
   void setpin(int pin);
   void tone(int pin, uint16_t frequency, uint32_t duration, uint32_t silentDuration);
-  void toneBip(int pin, uint32_t duration);
+  void playBip(int pin, uint32_t duration);
+  void playBuzzer(int pin);
+  void stopBuzzer(int pin);
   void tone(int pin, uint16_t frequency, uint32_t duration);
   void tone(uint16_t frequency, uint32_t duration = 0);
   void bendTones(uint16_t frequency, uint16_t finalFrequency, float step, uint32_t duration, uint32_t silentDuration);
   void playRingtone(uint16_t ringtone);
   void playBiptone(uint32_t duration);
+  void playBuzzertone();
+  void stopBuzzertone();
 private:
   uint8_t buzzer_pin;
 };

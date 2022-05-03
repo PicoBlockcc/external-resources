@@ -4,45 +4,56 @@
 #include <avr/wdt.h>
 #endif
 
-/**
- * Alternate Constructor which can call your own function to map the Buzzer to arduino port,
- * \param[in]
- *   switchPin - arduino port for buzzer detect pin.
- */
+
 Buzzer::Buzzer(int pin)
 {
   this->buzzer_pin = pin;
 }
 
-/**
- * \par Function
- *    setpin
- * \par Description
- *    Reset the buzzer available pin by its arduino port.
- * \param[in]
- *    pin - arduino port for buzzer detect pin.
- */
 void Buzzer::setpin(int pin)
 {
   this->buzzer_pin = pin;
 }
 
-/**
- * \par Function
- *    tone
- * \par Description
- *    Playing the tones.
- * \param[in]
- *    pin - Which pin on board that buzzer is connecting to.
- * \param[in]
- *    frequency - The speed of buzzer's tone play.
- * \param[in]
- *    duration - Time of a tone play.
- * \param[in]
- *    silentDuration - Silent time of a tone after play finished.
- * \par Others
- *    Frequency (in hertz) and duration (in milliseconds).
- */
+void Buzzer::playBiptone(uint32_t duration)
+{
+  playBip(this->buzzer_pin, duration);
+}
+
+void Buzzer::playBuzzertone()
+{
+  playBuzzer(this->buzzer_pin);
+}
+
+void Buzzer::stopBuzzertone()
+{
+  stopBuzzer(this->buzzer_pin);
+}
+
+void Buzzer::playBip(int pin, uint32_t duration)
+{
+  this->buzzer_pin = pin;
+  pinMode(this->buzzer_pin, OUTPUT);
+  digitalWrite(this->buzzer_pin, HIGH);
+  delay(duration);
+  digitalWrite(this->buzzer_pin, LOW);
+  delay(duration);
+}
+
+void Buzzer::playBuzzer(int pin)
+{
+  this->buzzer_pin = pin;
+  pinMode(this->buzzer_pin, OUTPUT);
+  digitalWrite(this->buzzer_pin, HIGH);
+}
+
+void Buzzer::stopBuzzer(int pin)
+{
+  this->buzzer_pin = pin;
+  pinMode(this->buzzer_pin, OUTPUT);
+  digitalWrite(this->buzzer_pin, LOW);
+}
+
 void Buzzer::tone(int pin, uint16_t frequency, uint32_t duration, uint32_t silentDuration)
 {
   this->buzzer_pin = pin;
@@ -62,70 +73,16 @@ void Buzzer::tone(int pin, uint16_t frequency, uint32_t duration, uint32_t silen
   delay(silentDuration);
 }
 
-void Buzzer::toneBip(int pin, uint32_t duration)
-{
-  this->buzzer_pin = pin;
-  pinMode(this->buzzer_pin, OUTPUT);
-  digitalWrite(this->buzzer_pin, HIGH);
-  delay(duration);
-  digitalWrite(this->buzzer_pin, LOW);
-  delay(duration);
-}
-
-/**
- * \par Function
- *    tone
- * \par Description
- *    Playing the tones.
- * \param[in]
- *    pin - Which pin on board that buzzer is connecting to.
- * \param[in]
- *    frequency - The speed of buzzer's tone play.
- * \param[in]
- *    duration - Time of a tone play.
- * \par Others
- *    Frequency (in hertz) and duration (in milliseconds).
- */
 void Buzzer::tone(int pin, uint16_t frequency, uint32_t duration)
 {
   tone(this->buzzer_pin, frequency, duration, 0);
 }
 
-/**
- * \par Function
- *    tone
- * \par Description
- *    Playing the tones.
- * \param[in]
- *    frequency - The speed of buzzer's tone play.
- * \param[in]
- *    duration - Time of a tone play.
- * \par Others
- *    Frequency (in hertz) and duration (in milliseconds).
- */
 void Buzzer::tone(uint16_t frequency, uint32_t duration)
 {
   tone(this->buzzer_pin, frequency, duration, 0);
 }
 
-/**
- * \par Function
- *    bendTones
- * \par Description
- *    Playing the tones A to tones B with setting step.
- * \param[in]
- *    frequency - The speed of buzzer's tone play.
- * \param[in]
- *    finalFrequency - The final speed of buzzer's tone play.
- * \param[in]
- *    step - The step of modify.
- * \param[in]
- *    duration - Time of a tone play.
- * \param[in]
- *    silentDuration - Silent time of a tone after play finished.
- * \par Others
- *    Frequency (in hertz) and duration (in milliseconds).
- */
 void Buzzer::bendTones(uint16_t frequency, uint16_t finalFrequency, float step, uint32_t duration, uint32_t silentDuration)
 {
   for (int i = frequency; i < finalFrequency;)
@@ -135,20 +92,6 @@ void Buzzer::bendTones(uint16_t frequency, uint16_t finalFrequency, float step, 
   }
 }
 
-
-void Buzzer::playBiptone(uint32_t duration)
-{
-  toneBip(this->buzzer_pin, duration);
-}
-
-/**
- * \par Function
- *    playMelody
- * \par Description
- *    Play customized melody.
- * \param[in]
- *    melodyName - Name of the customized melody.
- */
 void Buzzer::playRingtone(uint16_t ringtone)
 {
   switch (ringtone)
