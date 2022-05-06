@@ -1,7 +1,9 @@
 {
-    "IRREMOTERECEIVER_CATEGORY": "IR Remote Receiver",
-    "IRREMOTERECEIVER_INIT": "init IR remote receiver pin %1",
-    "IRREMOTERECEIVER_DATAAVAILABLE": "IR remote receiver data available?",
-    "IRREMOTERECEIVER_RECIVEDCOMMAND": "IR remote recived command",
-    "IRREMOTERECEIVER_RESUME": "IR remote resume recive"
+    "IRRECEIVER_CATEGORY": "IR Receiver",
+    "IRRECEIVER_INIT": "init IR remote receiver pin %1",
+    "IRRECEIVER_DATAAVAILABLE": "IR remote receiver data available?",
+    "IRRECEIVER_RECIVEDCOMMAND": "IR remote recived command",
+    "IRRECEIVER_RECIVEDHEX": "IR remote recived HEX",
+    "IRRECEIVER_RECIVEDDATA": "IR remote recived Data",
+    "IRRECEIVER_RESUME": "IR remote resume recive"
 }

@@ -11,10 +11,10 @@ function addBlocks (Blockly) {
         .getField('PIN')
         .getOptions();
 
-    Blockly.Blocks.irRemoteReceiver_init = {
+    Blockly.Blocks.iRReceiver_init = {
         init: function () {
             this.jsonInit({
-                message0: Blockly.Msg.IRREMOTERECEIVER_INIT,
+                message0: Blockly.Msg.IRRECEIVER_INIT,
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -30,10 +30,10 @@ function addBlocks (Blockly) {
         }
     };
 
-    Blockly.Blocks.irRemoteReceiver_dataAvailable = {
+    Blockly.Blocks.iRReceiver_dataAvailable = {
         init: function () {
             this.jsonInit({
-                message0: Blockly.Msg.IRREMOTERECEIVER_DATAAVAILABLE,
+                message0: Blockly.Msg.IRRECEIVER_DATAAVAILABLE,
                 colour: color,
                 secondaryColour: secondaryColour,
                 extensions: ['output_boolean']
@@ -41,10 +41,10 @@ function addBlocks (Blockly) {
         }
     };
 
-    Blockly.Blocks.irRemoteReceiver_recivedCommand = {
+    Blockly.Blocks.iRReceiver_recivedCommand = {
         init: function () {
             this.jsonInit({
-                message0: Blockly.Msg.IRREMOTERECEIVER_RECIVEDCOMMAND,
+                message0: Blockly.Msg.IRRECEIVER_RECIVEDCOMMAND,
                 colour: color,
                 secondaryColour: secondaryColour,
                 extensions: ['output_number']
@@ -52,10 +52,32 @@ function addBlocks (Blockly) {
         }
     };
 
-    Blockly.Blocks.irRemoteReceiver_resume = {
+    Blockly.Blocks.iRReceiver_recivedHEX = {
         init: function () {
             this.jsonInit({
-                message0: Blockly.Msg.IRREMOTERECEIVER_RESUME,
+                message0: Blockly.Msg.IRRECEIVER_RECIVEDHEX,
+                colour: color,
+                secondaryColour: secondaryColour,
+                extensions: ['output_number']
+            });
+        }
+    };
+
+    Blockly.Blocks.iRReceiver_recivedData = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.IRRECEIVER_RECIVEDDATA,
+                colour: color,
+                secondaryColour: secondaryColour,
+                extensions: ['output_number']
+            });
+        }
+    };
+
+    Blockly.Blocks.iRReceiver_resume = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.IRRECEIVER_RESUME,
                 colour: color,
                 secondaryColour: secondaryColour,
                 extensions: ['shape_statement']

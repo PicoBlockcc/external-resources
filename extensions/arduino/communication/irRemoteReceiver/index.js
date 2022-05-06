@@ -1,16 +1,15 @@
-const irRemoteReceiver = formatMessage => ({
+const iRReceiver = formatMessage => ({
     name: formatMessage({
-        id: 'irRemoteReceiver.name',
-        default: 'IR Remote Receiver'
+        id: 'iRReceiver.name',
+        default: 'IR Receiver'
     }),
-    extensionId: 'irRemoteReceiver',
+    extensionId: 'iRReceiver',
     version: '1.0.0',
-    supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
-        'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
+    supportDevice: ['arduinoUno', 'picoLabSensors'],
     author: 'ArthurZheng',
-    iconURL: `asset/irRemoteReceiver.png`,
+    iconURL: `asset/iRReceiver.png`,
     description: formatMessage({
-        id: 'irRemoteReceiver.description',
+        id: 'iRReceiver.description',
         default: 'Receiving and decoding data in infrared carrier.'
     }),
     featured: true,
@@ -21,7 +20,7 @@ const irRemoteReceiver = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['communication'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/main'
+    helpLink: 'https://pico.ma/irreceiver'
 });
 
-module.exports = irRemoteReceiver;
+module.exports = iRReceiver;
